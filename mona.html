@@ -12,29 +12,25 @@
         margin: 0;
     }
     div{
-        text-align: center;
-    }
-    #btn{
-        height:400px;
-        background:orange;
+            text-align: center;
     }
     </style>
 </head>
 <body>
-    <!-- Target -->
-    <input id="myAddress" value="MEy9C3MYFFydeZG1ftkrQc3EQkC1QzSsLN">
-    <!-- Trigger -->
-    <div id="btn" data-clipboard-target="#myAddress">
+    <div>
+    <button id="btn" data-clipboard-text="MEy9C3MYFFydeZG1ftkrQc3EQkC1QzSsLN">
         自分用WEBアプリケーションです<br>
         モナコインの蛇口に簡単にアクセスできます<br>
         1日 0.001MONA=0.05JPY<br>
-        ちりもつもればやまとなでしこ？
-    </div>
+        ちりもつもればやまとなでしこ？<br>
+        　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　<br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </button>
+    </div>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
     <script type="text/javascript">
     $(function(){
-        $("btn").css("width",window.innerWidth);
         (new Clipboard('#btn'))
         .on('success', function (e) {
             location.href="http://utyuu.space/spacespace-faucet/";
