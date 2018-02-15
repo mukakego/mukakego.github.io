@@ -18,21 +18,31 @@
 </head>
 <body>
     <div>
-    <button id="btn" data-clipboard-text="MEy9C3MYFFydeZG1ftkrQc3EQkC1QzSsLN">
-        自分用WEBアプリケーションです<br>
-        モナコインの蛇口に簡単にアクセスできます<br>
-        1日 0.001MONA=0.05JPY<br>
-        ちりもつもればやまとなでしこ？<br>
-        　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　<br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    </button>
     </div>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
     <script type="text/javascript">
     $(function(){
-        (new Clipboard('#btn'))
-        .on('success', function (e) {
+        let address = "MEy9C3MYFFydeZG1ftkrQc3EQkC1QzSsLN";
+        let text = [
+            "自分用WEBアプリケーションです",
+            "モナコインの蛇口に簡単にアクセスできます",
+            "1日 0.001MONA=0.05JPY",
+            "ちりもつもればやまとなでしこ？",
+            "「し」抜きで いや　死ぬ気で！",
+            "ふわふわり　ふわふわる",
+            "あなたが　名前を呼ぶ",
+            "それだけで宙へ浮かぶ",
+            "ふわふわる　ふわふわり",
+            "あなたが笑っている　それだけで笑顔になる"
+        ];
+        let $div = $("div");
+        for(let t in text)
+            $div.append(
+                $('<button>',{"class":"btn","data-clipboard-text":address}).text(text[t]),
+                $('<br>')
+            );
+        (new Clipboard('.btn')).on('success', function (e) {
             location.href="http://utyuu.space/spacespace-faucet/";
         });
     })
