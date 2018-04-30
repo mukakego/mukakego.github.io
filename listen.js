@@ -17,5 +17,6 @@ $(function(){
     });
     recognition.onaudioend = function(){
         let recognition = newRecog();
+        recognition.start();
     }
 })
