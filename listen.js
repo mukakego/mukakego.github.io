@@ -15,6 +15,7 @@ $(function(){
         $("#result").append("<br>"+text)
     })
     recognition.onaudioend = function(){
-        recording && recognition.start();
+        recording &&
+        setTimeOut(()=>recognition.start(),10);
     }
 })
