@@ -8,7 +8,7 @@ $(function(){
         let text = e.results[0][0].transcript;
         $("#result").append("<br>"+text)
     })
-    recognition.onend = function(){
+    recognition.onaudioend = function(){
         recognition.start();
     }
 })
