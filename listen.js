@@ -9,6 +9,7 @@ $(function(){
         $("#result").append("<br>"+text)
     })
     recognition.onspeechend = function(){
+        recognition.stop();
         recognition.start();
     }
 })
