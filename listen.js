@@ -7,6 +7,8 @@ $(function(){
     recognition.addEventListener('result', function(e) {
         let text = e.results[0][0].transcript;
         $("#result").append("<br>"+text)
-        recognition.start();
     })
+    recognition.onspeechend = function(){
+        recognition.start();
+    }
 })
