@@ -7,9 +7,9 @@ $(function () {
         ss.onvoiceschanged = null;
         let voices = ss.getVoices();
         $.each(voices,function(index,value){
-            if(value.voiceURI==="Google 日本語"){
-                msg.voice = value;
-            }
+            if(value.voiceURI!=="Google 日本語")return;
+            msg.voice = value;
+            return false;
         })
     }
 
@@ -32,6 +32,10 @@ $(function () {
         $('#stop-btn').on('click', function () {
             annyang.pause();
             $('#sound').text("停止中")
+        });
+        $('#kill-btn').on('click', function () {
+            annyang.abort();
+            $('#sound').text("終了")
         });
     }
 })
