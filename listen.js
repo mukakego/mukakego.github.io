@@ -1,21 +1,21 @@
 $(function(){
-    let recognition = new webkitSpeechRecognition();
-    recognition.lang = "ja";
-    let recording = false;
+    let newRecog = function(){
+        let recog = new webkitSpeechRecognition();
+        recog.lang = "ja";
+        recog.addEventListener('result', function(e) {
+            let text = e.results[0][0].transcript;
+            $("#result").append("<br>"+text)
+        })
+        return recog;
+    }
+    let recognition = newRecog();
     $('#start-btn').on('click', function() {
-        recording = true;
         recognition.start();
     });
     $('#stop-btn').on('click', function() {
-        recording = false;
         recognition.stop();
     });
-    recognition.addEventListener('result', function(e) {
-        let text = e.results[0][0].transcript;
-        $("#result").append("<br>"+text)
-    })
     recognition.onaudioend = function(){
-        recording &&
-        setTimeOut(()=>recognition.start(),10);
+        let recognition = newRecog();
     }
 })
