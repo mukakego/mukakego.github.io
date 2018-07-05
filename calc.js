@@ -44,10 +44,10 @@ $(function () {
     function calcLv() {
         let current = $current.toInt();
         let goal = $("#goal").toInt();
-        let next = $next.toInt();
 
         if (current > 100 || current < 0 || goal > 100 || goal < 0) return;
 
+        let next = $next.toInt();
         let needexp = max(0, LV_EXP[goal] - LV_EXP[current + 1] + next);
         $("#need").val(needexp);
 
