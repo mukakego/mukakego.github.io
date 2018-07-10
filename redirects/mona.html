@@ -10,20 +10,19 @@
     <script type="text/javascript">
     $(function(){
         let mona = new Image();
-        mona.crossOrigin = "anonymous";
         mona.onload = function(){
             let canvas = document.createElement("canvas");
             let ctx = canvas.getContext("2d");
 
             let width = image.width;
             let height = image.height;
-            canvas.width = width;
-            canvas.height = height;
+            canvas.width = 360;
+            canvas.height = 360;
             ctx.beginPath();
-            ctx.rect(0,0,size,size);
+            ctx.rect(0,0,360,360);
             ctx.fillStyle = "white";
             ctx.fill();
-            ctx.drawImage(mona, 0, 0, size, size);
+            ctx.drawImage(mona, 30, 30, width, height);
             let base64 = canvas.toDataURL("image/png");
             $("link").each(function(){
                this.href = base64;
