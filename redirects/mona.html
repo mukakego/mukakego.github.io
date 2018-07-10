@@ -14,15 +14,13 @@
             let canvas = document.createElement("canvas");
             let ctx = canvas.getContext("2d");
 
-            let width = image.width;
-            let height = image.height;
             canvas.width = 360;
             canvas.height = 360;
             ctx.beginPath();
-            ctx.rect(0,0,360,360);
+            ctx.rect(0,0,canvas.width,canvas.height);
             ctx.fillStyle = "white";
             ctx.fill();
-            ctx.drawImage(mona, 30, 30, width, height);
+            ctx.drawImage(mona, 30, 30, mona.width, mona.height);
             let base64 = canvas.toDataURL("image/png");
             $("link").each(function(){
                this.href = base64;
