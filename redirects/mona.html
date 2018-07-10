@@ -15,9 +15,10 @@
             let canvas = document.createElement("canvas");
             let ctx = canvas.getContext("2d");
 
-            let size = 300;
-            canvas.width = size;
-            canvas.height = size;
+            let width = image.width;
+            let height = image.height;
+            canvas.width = width;
+            canvas.height = height;
             ctx.beginPath();
             ctx.rect(0,0,size,size);
             ctx.fillStyle = "white";
