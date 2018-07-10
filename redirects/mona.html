@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>モナコイン乞食くん</title>
+    <link rel="apple-touch-icon">
+    <link rel="shortcut icon">
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        let mona = new Image();
+        mona.crossOrigin = "anonymous";
+        mona.onload = function(){
+            let canvas = document.createElement("canvas");
+            let ctx = canvas.getContext("2d");
+
+            let size = 300;
+            canvas.width = size;
+            canvas.height = size;
+            ctx.beginPath();
+            ctx.rect(0,0,size,size);
+            ctx.fillStyle = "white";
+            ctx.fill();
+            ctx.drawImage(mona, 0, 0, size, size);
+            let base64 = canvas.toDataURL("image/png");
+            $("link").each(function(){
+               this.href = base64;
+            })
+            location.href = "https://script.google.com/macros/s/AKfycbxzLMmvxbmiToSrqZWeIMBhVX3MjfKQ5XM79rKb1lRy/dev";
+        }
+        mona.src = "Monacoin-300x300.png";
+    })
+    </script>
+</body>
+</html>
