@@ -55,12 +55,11 @@
                     };
                 }
                 icon.href = koaras[state];
-                img.href = koaras[state];
+                img.src = koaras[state];
 
                 state++;
                 state%=4;
                 
-                console.log(koaras);
                 setTimeout(rotate,200);
             }
             rotate();
