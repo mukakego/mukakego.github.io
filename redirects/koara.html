@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Koara</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale = 1.0, user-scalable = no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link id="icon" rel="apple-touch-icon">
+</head>
+<body>
+    <a id="button" href="https://theawesomekoara.github.io"></a>
+    <img id="koaraimg" alt="コアラ">
+    <script type="text/javascript">
+        if (window.navigator.standalone) {
+            //フルスクリーン時に起動する
+            let clickEvent = document.createEvent('MouseEvents')
+            clickEvent.initEvent('click', true, true)
+            setTimeout(function() {
+                button.dispatchEvent(clickEvent)
+            }, 25)
+        } else {
+            //フルスクリーンじゃない時に起動する
+            let button = document.getElementById("button")
+            button.style["display"] = "none"
+            
+            let koaras = [];
+            function pushkoara(pointer){
+                let koara = new Image();
+                koara.onload = function(){
+                    let canvas = document.createElement("canvas");
+                    let ctx = canvas.getContext("2d");
+
+                    canvas.width = 188;
+                    canvas.height = 188;
+                    ctx.drawImage(koara, 0, 0, 188,188);
+                    let base64 = canvas.toDataURL("image/png");
+                    koaras[pointer] = base64;
+                }
+                koara.src = ""+pointer+".png";
+            }
+
+            let icon = document.getElementById("icon");
+            let img = document.getElementById("koaraimg");
+
+            let state = 0;
+            function rotate(){
+                for(let i = 0;i < 4; i++){
+                    if(!koaras[i])return;
+                }
+                icon.href = koaras[i];
+                img.href = koaras[i];
+
+                state++;
+                state%=4;
+
+                setTimeOut(rotate,200);
+            }
+        }
+    </script>
+</body>
+
+</html>
