@@ -50,17 +50,18 @@
             function rotate(){
                 for(let i = 0;i < 4; i++){
                     if(!koaras[i]){
-                        setTimeOut(rotate,200);
+                        setTimeout(rotate,200);
                     };
                 }
-                icon.href = koaras[i];
-                img.href = koaras[i];
+                icon.href = koaras[state];
+                img.href = koaras[state];
 
                 state++;
                 state%=4;
 
-                setTimeOut(rotate,200);
+                setTimeout(rotate,200);
             }
+            rotate();
         }
     </script>
 </body>
