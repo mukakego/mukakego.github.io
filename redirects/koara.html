@@ -46,7 +46,9 @@
             let state = 0;
             function rotate(){
                 for(let i = 0;i < 4; i++){
-                    if(!koaras[i])return;
+                    if(!koaras[i]){
+                        setTimeOut(rotate,200);
+                    };
                 }
                 icon.href = koaras[i];
                 img.href = koaras[i];
