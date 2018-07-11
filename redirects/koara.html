@@ -51,6 +51,7 @@
                 for(let i = 0;i < 4; i++){
                     if(!koaras[i]){
                         setTimeout(rotate,200);
+                        return;
                     };
                 }
                 icon.href = koaras[state];
@@ -58,7 +59,8 @@
 
                 state++;
                 state%=4;
-
+                
+                console.log(koaras);
                 setTimeout(rotate,200);
             }
             rotate();
