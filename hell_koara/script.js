@@ -27,7 +27,7 @@ $(function(){
         for (let i = 0; i < 4; i++) {
             koaraimg[i] = new Image();
             koaraimg[i].onload = () => onload(i);
-            koaraimg[i].src = "" + i + ".png";
+            koaraimg[i].src = "./" + i + ".png";
         }
         draw = waitkoara;
     }
