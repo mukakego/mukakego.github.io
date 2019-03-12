@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HSPishoku</title>
+    <style>
+        div,
+        input,
+        p {
+            text-align: center;
+        }
+
+        table {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 20%; width: 100%; color:aliceblue }
+      form input { border: 0; padding: 10px; width: 100%; margin-right: 0%; }
+      form button { background:#555; padding: 10px; width: 100%; margin-right: 0%; color:aliceblue }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>HSPishoku</h2>
+        <form>
+            完全に自分用ツールなのでさわらないでね！！
+            <br>
+            クリップボードの内容が上書きされます
+            <br>
+            Tabキーを押すと下のテキストボックスにフォーカスが移るよ（たぶん）
+            <br>
+            この下のやつにクリップボードから貼り付ける
+        <input type="text" id="targettext" size="3">
+        <button class="btn" id="mp4">mp4</button>
+        <button class="btn" id="png">png</button>
+        <button class="btn" id="jpg">jpg</button>
+        　<br>　
+        <button id="url">URLに戻す</button>
+    </form>
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <br>
+    <br>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+<script src="hspishoku.js"></script>
+
+</html>
